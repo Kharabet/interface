@@ -49,8 +49,7 @@ const HeaderFrame = styled.div`
     padding: 0 1rem;
     width: calc(100%);
     position: relative;
-  `};
-
+  `}
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
         padding: 0.5rem 1rem;
   `}
@@ -61,7 +60,6 @@ const HeaderControls = styled.div`
   flex-direction: row;
   align-items: center;
   justify-self: flex-end;
-
   ${({ theme }) => theme.mediaWidth.upToMedium`
     flex-direction: row;
     justify-content: space-between;
@@ -123,7 +121,6 @@ const AccountElement = styled.div<{ active: boolean }>`
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
-
   :focus {
     border: 1px solid blue;
   }
@@ -142,11 +139,9 @@ const UNIWrapper = styled.span`
   width: fit-content;
   position: relative;
   cursor: pointer;
-
   :hover {
     opacity: 0.8;
   }
-
   :active {
     opacity: 0.9;
   }
@@ -185,7 +180,7 @@ const Title = styled.a`
   margin-right: 12px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
-  `};
+  `}
   :hover {
     cursor: pointer;
   }
@@ -201,10 +196,10 @@ const UniIcon = styled.div`
 const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
-  activeClassName
+  activeClassName,
 })`
   ${({ theme }) => theme.flexRowNoWrap}
-  align-items: left;
+  align-items: left
   border-radius: 3rem;
   outline: none;
   cursor: pointer;
@@ -214,13 +209,11 @@ const StyledNavLink = styled(NavLink).attrs({
   width: fit-content;
   margin: 0 12px;
   font-weight: 500;
-
   &.${activeClassName} {
     border-radius: 12px;
     font-weight: 600;
     color: ${({ theme }) => theme.text1};
   }
-
   :hover,
   :focus {
     color: ${({ theme }) => darken(0.1, theme.text1)};
@@ -228,10 +221,10 @@ const StyledNavLink = styled(NavLink).attrs({
 `
 
 const StyledExternalLink = styled(ExternalLink).attrs({
-  activeClassName
+  activeClassName,
 })<{ isActive?: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
-  align-items: left;
+  align-items: left
   border-radius: 3rem;
   outline: none;
   cursor: pointer;
@@ -241,18 +234,15 @@ const StyledExternalLink = styled(ExternalLink).attrs({
   width: fit-content;
   margin: 0 12px;
   font-weight: 500;
-
   &.${activeClassName} {
     border-radius: 12px;
     font-weight: 600;
     color: ${({ theme }) => theme.text1};
   }
-
   :hover,
   :focus {
     color: ${({ theme }) => darken(0.1, theme.text1)};
   }
-
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
       display: none;
 `}
@@ -271,14 +261,12 @@ export const StyledMenuButton = styled.button`
   margin-left: 8px;
   padding: 0.15rem 0.5rem;
   border-radius: 0.5rem;
-
   :hover,
   :focus {
     cursor: pointer;
     outline: none;
     background-color: ${({ theme }) => theme.bg4};
   }
-
   svg {
     margin-top: 2px;
   }
@@ -291,7 +279,8 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Görli',
-  [ChainId.KOVAN]: 'Kovan'
+  [ChainId.KOVAN]: 'Kovan',
+  [ChainId.CROSSFI]: 'CrossFi',
 }
 
 export default function Header() {
@@ -380,7 +369,7 @@ export default function Header() {
                   <HideSmall>
                     <TYPE.white
                       style={{
-                        paddingRight: '.4rem'
+                        paddingRight: '.4rem',
                       }}
                     >
                       <CountUp

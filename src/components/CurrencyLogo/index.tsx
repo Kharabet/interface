@@ -2,7 +2,7 @@ import { Currency, ETHER, Token } from '@uniswap/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import EthereumLogo from '../../assets/images/ethereum-logo.png'
+import EthereumLogo from '../../assets/images/xfi-logo.svg'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import Logo from '../Logo'
@@ -28,7 +28,7 @@ const StyledLogo = styled(Logo)<{ size: string }>`
 export default function CurrencyLogo({
   currency,
   size = '24px',
-  style
+  style,
 }: {
   currency?: Currency
   size?: string
