@@ -30,7 +30,7 @@
     "@uniswap/governance": "^1.0.2",
     "@uniswap/liquidity-staker": "^1.0.2",
     "@uniswap/merkle-distributor": "1.0.1",
-    "@uniswap/sdk": "file:../v2-sdk",
+    "@uniswap/sdk": "file:./packages/v2-sdk",
     "@uniswap/token-lists": "^1.0.0-beta.19",
     "@uniswap/v2-core": "1.0.0",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
@@ -100,7 +100,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'"
+    "integration-test": "start-server-and-test 'serve build -l 3000' http://localhost:3000 'cypress run'",
+    "preinstall": "yarn build:v2-sdk",
+    "build:v2-sdk": "yarn --cwd ./packages/v2-sdk install && yarn --cwd ./packages/v2-sdk build"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -120,8 +122,5 @@
       "last 1 safari version"
     ]
   },
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@uniswap/default-token-list": "file:../default-token-list"
-  }
+  "license": "GPL-3.0-or-later"
 }
