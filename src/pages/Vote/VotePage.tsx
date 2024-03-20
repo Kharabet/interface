@@ -22,7 +22,7 @@ import VoteModal from '../../components/vote/VoteModal'
 import { JSBI, TokenAmount } from '@uniswap/sdk'
 import { useActiveWeb3React } from '../../hooks'
 import { AVERAGE_BLOCK_TIME_IN_SECS, COMMON_CONTRACT_NAMES, UNI, ZERO_ADDRESS } from '../../constants'
-import { getEtherscanLink, isAddress } from '../../utils'
+import { getBlockExplorerLink, isAddress } from '../../utils'
 import { ApplicationModal } from '../../state/application/actions'
 import { useBlockNumber, useModalOpen, useToggleDelegateModal, useToggleVoteModal } from '../../state/application/hooks'
 import DelegateModal from '../../components/vote/DelegateModal'
@@ -173,7 +173,7 @@ export default function VotePage({
   const linkIfAddress = (content: string) => {
     if (isAddress(content) && chainId) {
       const commonName = COMMON_CONTRACT_NAMES[content] ?? content
-      return <ExternalLink href={getEtherscanLink(chainId, content, 'address')}>{commonName}</ExternalLink>
+      return <ExternalLink href={getBlockExplorerLink(chainId, content, 'address')}>{commonName}</ExternalLink>
     }
     return <span>{content}</span>
   }
@@ -303,7 +303,7 @@ export default function VotePage({
         <AutoColumn gap="md">
           <TYPE.mediumHeader fontWeight={600}>Proposer</TYPE.mediumHeader>
           <ProposerAddressLink
-            href={proposalData?.proposer && chainId ? getEtherscanLink(chainId, proposalData?.proposer, 'address') : ''}
+            href={proposalData?.proposer && chainId ? getBlockExplorerLink(chainId, proposalData?.proposer, 'address') : ''}
           >
             <ReactMarkdown source={proposalData?.proposer} />
           </ProposerAddressLink>

@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { TYPE, ExternalLink } from '../../theme'
 
 import { useBlockNumber } from '../../state/application/hooks'
-import { getEtherscanLink } from '../../utils'
+import { getBlockExplorerLink } from '../../utils'
 import { useActiveWeb3React } from '../../hooks'
 
 const StyledPolling = styled.div`
@@ -91,7 +91,7 @@ export default function Polling() {
   )
 
   return (
-    <ExternalLink href={chainId && blockNumber ? getEtherscanLink(chainId, blockNumber.toString(), 'block') : ''}>
+    <ExternalLink href={chainId && blockNumber ? getBlockExplorerLink(chainId, blockNumber.toString(), 'block') : ''}>
       <StyledPolling onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
         <StyledPollingNumber breathe={isMounting} hovering={isHover}>
           {blockNumber}

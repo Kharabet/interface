@@ -8,7 +8,7 @@ import { RowBetween, AutoRow } from 'components/Row'
 import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
 import { useActiveWeb3React } from 'hooks'
-import { getEtherscanLink } from 'utils'
+import { getBlockExplorerLink } from 'utils'
 import { Currency, Token } from '@uniswap/sdk'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 import { useUnsupportedTokens } from '../../hooks/Tokens'
@@ -78,7 +78,7 @@ export default function UnsupportedCurrencyFooter({
                         <TYPE.body fontWeight={500}>{token.symbol}</TYPE.body>
                       </AutoRow>
                       {chainId && (
-                        <ExternalLink href={getEtherscanLink(chainId, token.address, 'address')}>
+                        <ExternalLink href={getBlockExplorerLink(chainId, token.address, 'address')}>
                           <AddressText>{token.address}</AddressText>
                         </ExternalLink>
                       )}
