@@ -55,7 +55,7 @@ export function V1LiquidityInfo({
         <div style={{ marginLeft: '.75rem' }}>
           <TYPE.mediumHeader>
             {<FormattedCurrencyAmount currencyAmount={liquidityTokenAmount} />}{' '}
-            {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/ETH
+            {chainId && token.equals(WETH[chainId]) ? 'WETH' : token.symbol}/XFI
           </TYPE.mediumHeader>
         </div>
       </AutoRow>
@@ -73,7 +73,7 @@ export function V1LiquidityInfo({
       </RowBetween>
       <RowBetween mb="1rem">
         <Text fontSize={16} fontWeight={500}>
-          Pooled ETH:
+          Pooled XFI:
         </Text>
         <RowFixed>
           <Text fontSize={16} fontWeight={500} marginLeft={'6px'}>
@@ -207,26 +207,26 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
             <RowBetween>
               <TYPE.body>V1 Price:</TYPE.body>
               <TYPE.black>
-                {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
+                {v1SpotPrice?.toSignificant(6)} {token.symbol}/XFI
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v1SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
+                {v1SpotPrice?.invert()?.toSignificant(6)} XFI/{token.symbol}
               </TYPE.black>
             </RowBetween>
 
             <RowBetween>
               <TYPE.body>V2 Price:</TYPE.body>
               <TYPE.black>
-                {v2SpotPrice?.toSignificant(6)} {token.symbol}/ETH
+                {v2SpotPrice?.toSignificant(6)} {token.symbol}/XFI
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v2SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
+                {v2SpotPrice?.invert()?.toSignificant(6)} XFI/{token.symbol}
               </TYPE.black>
             </RowBetween>
 
@@ -249,13 +249,13 @@ function V1PairMigration({ liquidityTokenAmount, token }: { liquidityTokenAmount
             <RowBetween>
               <TYPE.body>V1 Price:</TYPE.body>
               <TYPE.black>
-                {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
+                {v1SpotPrice?.toSignificant(6)} {token.symbol}/XFI
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v1SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
+                {v1SpotPrice?.invert()?.toSignificant(6)} XFI/{token.symbol}
               </TYPE.black>
             </RowBetween>
           </AutoColumn>
